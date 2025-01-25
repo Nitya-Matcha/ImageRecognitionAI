@@ -62,6 +62,7 @@ namestonumbers = {
 
 #The above is assigning a class of images to a specific label. It's way easier to do it in terms of a number than setting up a string, mainly because I can't spell.
 
+createnewcifar10group(imagedirectory, savefile, namestonumbers)
 
 #It's dumping whatever output the computer got into an object called "i" si ut can eb traced later
 

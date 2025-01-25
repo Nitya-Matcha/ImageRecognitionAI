@@ -17,7 +17,7 @@ def convertimagetocifar(imagedirectory, savefile, namestonumbers):
   data = []
   labels = []
 
-for labelnames, labelindex in label.items():
+for labelnames, labelindex in namestonumbers.items():
   classdirectory = os.path.join(imagedirectory, labelnames)
   if not os.path.isdir(classdirectory):
     print("Not in this folder of images")
@@ -47,6 +47,21 @@ batch = { b"data": data, b"labels": label.tolist() }
 with open(savefile, "nochange2file") as i:
   pickle.dump(batch, i)
 print("successfully saved!")
+
+if __name__ == "__main__":
+  imagedirectory = "images"
+  savefile = "savefiles"
+#giving names for the directories that hold the groups of images. I couldn't think of a creative name for savefile
+
+namestonumbers = {
+  "Myocardial" = 0
+  "Abnormal" = 1
+  "History" = 2
+  "Normal" = 3
+}
+
+#The above is assigning a class of images to a specific label. It's way easier to do it in terms of a number than setting up a string, mainly because I can't spell.
+
 
 #It's dumping whatever output the computer got into an object called "i" si ut can eb traced later
 

@@ -1,5 +1,7 @@
 import os
-os.mkdir(images) 
+import shutil
+
+os.mkdir(images, exist = True) 
 os.cddir(images) 
 '''
 I'm pretty sure the above code that says os.cddir images is highkey wrong, 

@@ -1,8 +1,12 @@
 import os
 import shutil
 
-os.makedirs(images, exist = True) 
-os.cddir(images) 
+
+
+def organize(images, names, imagepathsforallclasses)
+
+  os.makedirs(images, exist = True) 
+  os.cddir(images) 
 '''
 I'm pretty sure the above code that says os.cddir images is highkey wrong, 
 because it's supposed to contain brackets but I'm unsure whether I'm supposed to be calling the main directory or the subdirectories
@@ -11,13 +15,13 @@ because it's supposed to contain brackets but I'm unsure whether I'm supposed to
 
 #Tbh the code below I got from an online source because like creating subdirectories for everything and their mom was kind of a pain
 
-for name in names:
-  classdirectory = os.path.join(images, name)
-  os.makedirs(classdirectory, exist = True)
-  for imagepaths in imagepathsforallclasses(name, []):
-    shutil.copy(imagepaths, classdirectory)
-else:
-  print("Sorry, couldn't copy image path :(")
+  for name in names:
+    classdirectory = os.path.join(images, name)
+    os.makedirs(classdirectory, exist = True)
+    for imagepaths in imagepathsforallclasses(name, []):
+      shutil.copy(imagepaths, classdirectory)
+  else:
+    print("Sorry, couldn't copy image path :(")
 
 #I'm getting an error here that says unexpected Indent, but tbh I think all my indents r fine
 if __name__ == "__main__":
